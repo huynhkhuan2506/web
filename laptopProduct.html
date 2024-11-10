@@ -13,61 +13,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #343A40;">
-            <a class="navbar-brand text-white" href="#">
-                <img style="height: 40px; width: auto;" src="https://e7.pngegg.com/pngimages/779/61/png-clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" href="../index.html">TRANG CHỦ <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">THÔNG TIN GIẢM GIÁ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">GIỎ HÀNG</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            SẢN PHẨM
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">LAPTOP</a>
-                            <a class="dropdown-item" href="#">PC</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">HELP CENTER</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">ABOUT US</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 mr-2 my-sm-0" type="submit">Search</button>
-                </form>
-                <a class="btn btn-outline-light" href="login.html">Đăng Nhập</a>
-                <a class="btn btn-outline-light" href="register.html">Đăng Ký</a>
-            </div>
-        </nav>
-    </header>
+    <div id="header-container"></div>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="../img/banner-product.webp" class="d-block w-100" alt="...">
+              <img src="./img/banner-product.webp" class="d-block w-100" alt="...">
           </div>
         </div>
       </div>
@@ -695,6 +649,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script>
+        fetch('./header.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the header:', error));
+    </script>
 </body>
 </html>

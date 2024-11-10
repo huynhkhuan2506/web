@@ -1,3 +1,8 @@
+<?php
+session_start(); // Dòng này phải có ở đầu file
+?>
+
+<!-- Header -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #343A40;">
         <a class="navbar-brand text-white" href="#">
@@ -11,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="/WebDesignFrontEnd/ProjectGiuaKy/src/index.html">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="./">TRANG CHỦ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">THÔNG TIN GIẢM GIÁ</a>
@@ -40,8 +45,17 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light my-2 mr-2 my-sm-0" type="submit">Search</button>
             </form>
-            <a class="btn btn-outline-light" href="login.html">Đăng Nhập</a>
-            <a class="btn btn-outline-light" href="register.html">Đăng Ký</a>
+            <?php
+                if (isset($_SESSION['username'])) {
+                    // Nếu đã đăng nhập, hiển thị tên người dùng và nút đăng xuất
+                    echo '<a class="btn btn-outline-light disabled" href="#">Chào, ' . $_SESSION['username'] . '</a>';
+                    echo '<a class="btn btn-outline-light" href="./logout.php">Đăng Xuất</a>';
+                } else {
+                    // Nếu chưa đăng nhập, hiển thị nút đăng nhập và đăng ký
+                    echo '<a class="btn btn-outline-light" href="./login.php">Đăng Nhập</a>';
+                    echo '<a class="btn btn-outline-light" href="./register.php">Đăng Ký</a>';
+                }
+            ?>
         </div>
     </nav>
 </header>

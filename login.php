@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['username'];
 
             // Chuyển hướng đến trang chính sau khi đăng nhập thành công
-            header("Location: index.php"); // Hoặc chuyển đến trang mà bạn muốn
+            header("Location: index.html"); // Hoặc chuyển đến trang mà bạn muốn
             exit(); // Đảm bảo không còn mã code nào tiếp tục chạy
         } else {
             echo "Invalid password!";

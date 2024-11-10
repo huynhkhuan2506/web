@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $username;
 
             // Chuyển hướng đến trang chính sau khi đăng ký thành công
-            header("Location: index.php"); // Hoặc trang mà bạn muốn
+            header("Location: index.html"); // Hoặc trang mà bạn muốn
             exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

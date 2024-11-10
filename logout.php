@@ -6,6 +6,6 @@ session_unset();
 session_destroy();
 
 // Chuyển hướng về trang chủ hoặc trang đăng nhập
-header("Location: index.php"); // Hoặc trang bạn muốn
+header("Location: index.html"); // Hoặc trang bạn muốn
 exit();
 ?>
