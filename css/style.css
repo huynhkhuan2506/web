@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Readex+Pro:wght@160..700&display=swap');
+
+body {
+    font-family: "Readex Pro", sans-serif;
+    background-color: #ECECEC;
+}
+
+.anchor-laptop {
+    color: black;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.anchor-laptop:hover {
+    text-decoration: none;
+    color: #0069D9;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.main {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.title-sale {
+    font-size: 24px;
+    color: black;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.body-carousel {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Màu hiệu ứng hover */
+}
+
+/* Responsive PC Product */
+.anchor-laptop {
+    font-size: 1.25rem; /* Default size for larger screens */
+}
+
+/* Media query for tablet and mobile screens */
+@media (max-width: 768px) {
+    .anchor-laptop {
+        font-size: 1rem; /* Smaller size for tablet */
+    }
+}
+@media (max-width: 576px) {
+    .anchor-laptop {
+        font-size: 0.9rem; /* Even smaller size for mobile */
+    }
+}
+
+/* Item */
+.specs-list .spec-item {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(128, 128, 128, 0.2); /* Lớp phủ màu xám nhạt */
+    border-radius: 4px;
+}
+
+.specs-list .spec-item i {
+    color: #666; /* Màu của icon */
+    margin-right: 8px;
+}
+
+.card-footer button {
+    display: inline-flex;
+    align-items: center;
+}
+
+.card-footer button i {
+    margin-right: 5px;
+}
+
+
+/* Thêm khoảng cách giữa các button trên giao diện PC */
+@media (min-width: 992px) { /* Điều chỉnh khoảng cách cho màn hình lớn */
+    .btn {
+        margin-right: 10px; /* Thêm khoảng cách giữa các button */
+    }
+    .btn:last-child {
+        margin-right: 0; /* Không thêm khoảng cách vào button cuối cùng */
+    }
+}
